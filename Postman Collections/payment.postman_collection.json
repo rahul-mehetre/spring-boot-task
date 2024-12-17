@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "4abba407-e8b3-4d06-9ad8-4a6b5653e31e",
+		"name": "payment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40333398"
+	},
+	"item": [
+		{
+			"name": "save user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Rahul\",\r\n    \"email\":\"abc@gmail.com\",\r\n    \"accNo\":\"1212\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/payment/save-user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payment",
+						"save-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save-transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\":66666,\r\n    \"userId\":1,\r\n    \"isSuccess\":false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/payment/save-transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payment",
+						"save-transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSuccessAmountByUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/payment/getSuccessAmountByUser?userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payment",
+						"getSuccessAmountByUser"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-fail-tansaction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/payment/delete-fail-tansaction?userId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payment",
+						"delete-fail-tansaction"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/payment/get-UserId-With-MaxRefundAmount",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/payment/get-UserId-With-MaxRefundAmount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payment",
+						"get-UserId-With-MaxRefundAmount"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

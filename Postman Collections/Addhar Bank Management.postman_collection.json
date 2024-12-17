@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "e025a226-348e-4795-b7fb-02e02fb24277",
+		"name": "Addhar Bank Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40333398"
+	},
+	"item": [
+		{
+			"name": "saveCitizen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"abc\",\r\n    \"panId\":\"abcabc\",\r\n    \"aadharId\":\"343434323232\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/citizen/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"citizen",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCitizenByAadhar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/citizen/getByAadhar/343434323232",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"citizen",
+						"getByAadhar",
+						"343434323232"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCitizenByPan",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/citizen/getByPan/abcabc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"citizen",
+						"getByPan",
+						"abcabc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"abd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/citizen/upadte-citizen-Name/343434323232",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"citizen",
+						"upadte-citizen-Name",
+						"343434323232"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

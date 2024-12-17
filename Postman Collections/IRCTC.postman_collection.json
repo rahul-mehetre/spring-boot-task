@@ -1,0 +1,263 @@
+{
+	"info": {
+		"_postman_id": "9fdc81a2-23b4-4ab5-a196-953c6f7ebf23",
+		"name": "IRCTC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40333398"
+	},
+	"item": [
+		{
+			"name": "1. Add Train",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"destination\":\"Pune\",\r\n    \"source\":\"Mumbai\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/irctc/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"irctc",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get train",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/irctc/getTrainById?trainId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"irctc",
+						"getTrainById"
+					],
+					"query": [
+						{
+							"key": "trainId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Add Passenger",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ticketId\":121,\r\n    \"trainId\":1,\r\n    \"age\":22,\r\n    \"gender\":\"male\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/irctc/add-passenger",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"irctc",
+						"add-passenger"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. getFemalPassengerCount",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/irctc/getFemalPassengerCount?start_age=15&end_age=25&source=Mumbai",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"irctc",
+						"getFemalPassengerCount"
+					],
+					"query": [
+						{
+							"key": "start_age",
+							"value": "15"
+						},
+						{
+							"key": "end_age",
+							"value": "25"
+						},
+						{
+							"key": "source",
+							"value": "Mumbai"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. getPassengerCount-By-Source-Des-Date",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"source\":\"Mumbai\",\r\n    \"destination\":\"Pune\",\r\n    \"date\":\"2024-12-17\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/irctc/getPassengerCount-By-Source-Des-Date",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"irctc",
+						"getPassengerCount-By-Source-Des-Date"
+					],
+					"query": [
+						{
+							"key": "passengerId",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. create order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"passengerId\":1,\r\n    \"selectedFoodIds\":[1],\r\n    \"isActive\":true\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/irctc/order/create-order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"irctc",
+						"order",
+						"create-order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. add food",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"biryani\",\r\n    \"price\":110\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/irctc/order/add-food",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"irctc",
+						"order",
+						"add-food"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7. getOrderPriceByDateAndTrainId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/irctc/order/getOrderPriceByDateAndTrainId?date=2024-12-17&trainId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"irctc",
+						"order",
+						"getOrderPriceByDateAndTrainId"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-12-17"
+						},
+						{
+							"key": "trainId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

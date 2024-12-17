@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "d385d2c6-45f4-4386-acc1-e0579c2c07f8",
+		"name": "Book Author Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40333398"
+	},
+	"item": [
+		{
+			"name": "add author",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"autherName\":\"Rahul Mehetre\",\r\n    \"age\":22,\r\n    \"gender\":\"Male\",\r\n    \"rating\":5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/author/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"author",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bookName\":\"Java 2\",\r\n    \"pages\":550,\r\n    \"authersID\":3,\r\n    \"yearOfPublication\":2024\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/book/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auther with max pages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/book/getAutherByMaxPages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book",
+						"getAutherByMaxPages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Author",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/book/getAuthorById/{authorId}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book",
+						"getAuthorById",
+						"{authorId}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Published Book By Author in Year",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/book/getPublishBookInYear/1/2024",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book",
+						"getPublishBookInYear",
+						"1",
+						"2024"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

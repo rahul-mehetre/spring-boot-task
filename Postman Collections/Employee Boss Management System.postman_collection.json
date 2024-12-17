@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "68e6a615-035d-4394-b646-85738137a0d8",
+		"name": "Employee Boss Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40333398"
+	},
+	"item": [
+		{
+			"name": "Add Employee For CEO",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employee/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employee/getEmployeeById/{employeeId}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee",
+						"getEmployeeById",
+						"{employeeId}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Employee For Boss",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employeeName\":\"Rohit\",\r\n    \"employeePosition\":\"boss\",\r\n    \"bossEmployeeId\":1,\r\n    \"rating\":4,\r\n    \"age\":22,\r\n    \"salary\":10000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/employee/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Regular Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employeeName\":\"Harsh\",\r\n    \"employeePosition\":\"python developer\",\r\n    \"rating\":4,\r\n    \"age\":22,\r\n    \"salary\":10000,\r\n    \"bossEmployeeId\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/employee/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee By Age And Rating",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employee/getEmployeeByAgeAndRating/{age}/{rating}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee",
+						"getEmployeeByAgeAndRating",
+						"{age}",
+						"{rating}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Boss Employee Salary by Rating",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"salary\":25000,\r\n    \"rating\":4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/employee/updateBossSalByRating",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee",
+						"updateBossSalByRating"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee List by Rating Criteria",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/employee/getEmployeeCountByBossRatingAndEmployeeRating/{rating}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"employee",
+						"getEmployeeCountByBossRatingAndEmployeeRating",
+						"{rating}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

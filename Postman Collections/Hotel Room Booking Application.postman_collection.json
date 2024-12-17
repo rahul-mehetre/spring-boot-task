@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "4e57683c-daf9-446e-9737-21d3c901ee7b",
+		"name": "Hotel Room Booking Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40333398"
+	},
+	"item": [
+		{
+			"name": "hotel",
+			"item": [
+				{
+					"name": "Add Hotel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hotelName\":\"Sagar Hotel\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/hotel/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hotel",
+								"save"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "room",
+			"item": [
+				{
+					"name": "Add Hotel Room",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roomId\":1,\r\n    \"isAcRoom\":true,\r\n    \"roomPrice\":2000,\r\n    \"isBooked\":false,\r\n    \"hotelId\":1,\r\n    \"isActive\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/hotel/room/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hotel",
+								"room",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Room",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roomId\":1,\r\n    \"isAcRoom\":true,\r\n    \"roomPrice\":2000,\r\n    \"isBooked\":false,\r\n    \"hotelId\":1,\r\n    \"isActive\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/hotel/room/get-room/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hotel",
+								"room",
+								"get-room",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Room",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"roomId\":1,\r\n    \"isAcRoom\":true,\r\n    \"roomPrice\":2000,\r\n    \"isBooked\":false,\r\n    \"hotelId\":1,\r\n    \"isActive\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/hotel/room/delete-room/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hotel",
+								"room",
+								"delete-room",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "book room",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/hotel/room/book-room/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hotel",
+								"room",
+								"book-room",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unbook Room",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/hotel/room/unbook-room/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hotel",
+								"room",
+								"unbook-room",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

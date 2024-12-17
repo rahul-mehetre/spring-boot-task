@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "5a3b0859-c501-4701-87f0-b57cf31f7a29",
+		"name": "Restaurant Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40333398"
+	},
+	"item": [
+		{
+			"name": "Add new Dish",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dishName\":\"Chapati Bhaji\",\r\n    \"dishPrice\":70\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/restaurant/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"restaurant",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Menu Card",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/restaurant/getMenuCard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"restaurant",
+						"getMenuCard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create table order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tableNo\":1,\r\n    \"isActive\":true,\r\n    \"selectedDishesId\":[1]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/restaurant/create-order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"restaurant",
+						"create-order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Table Bill",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/restaurant/getTableBill/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"restaurant",
+						"getTableBill",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Close the order",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/restaurant/closeOrder/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"restaurant",
+						"closeOrder",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get table order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/restaurant/getOrderById/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"restaurant",
+						"getOrderById",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update order",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tableNo\":1,\r\n    \"selectedDishesId\":[1]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/restaurant/updateOrder/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"restaurant",
+						"updateOrder",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
