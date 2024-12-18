@@ -6,6 +6,8 @@ import lombok.Data;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Data
 @Entity
 public class UserPost {
@@ -20,12 +22,12 @@ public class UserPost {
 
     
     private Long likesCount;
-    
    
-    // The inverse relationship can optionally be mapped if needed (e.g., a many-to-one with User)
-    
-    
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "post_id") // foreign key column in the UserPost table
     private List<Notification> notifications ;
+    
+    @ManyToOne
+    @JsonBackReference
+    private User user;
 }

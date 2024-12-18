@@ -13,7 +13,7 @@ public interface PostService {
 	public UserPostBean getPost(Long id);
 	public boolean deletePost(Long id);
 
-	public CommonResponseBean insertLike(UserPostBean bean,Long userId,Long postId);
+	public CommonResponseBean insertLike(UserPostBean bean,Long postId);
 	
 	public UserPost mapBeanToEntity(UserPostBean beans,CommonResponseBean responseBean);
 	public UserPostBean mapEntityToBean(UserPost user,CommonResponseBean responseBean);

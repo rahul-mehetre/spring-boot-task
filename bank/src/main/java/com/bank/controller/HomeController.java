@@ -53,7 +53,7 @@ public class HomeController {
 	}
 
 	@PutMapping("/upadte-citizen-Name/{id}")
-	public ResponseEntity<CommonResponseBean> getCitizenByPan(@PathVariable String id, @RequestBody CitizenBean bean) {
+	public ResponseEntity<CommonResponseBean> upadteCitizenName(@PathVariable String id, @RequestBody CitizenBean bean) {
 		CommonResponseBean response = citizenService.updatePersonNameByAadhar(id, bean.getName());
 		if (response.getStatus()) {
 			return ResponseEntity.status(HttpStatus.CREATED).body(response);

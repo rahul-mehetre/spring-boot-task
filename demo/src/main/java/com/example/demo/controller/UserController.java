@@ -38,8 +38,8 @@ public class UserController {
 		}
 	}
 	
-	@GetMapping("/getUserNotificationCount/{userId}")
-	public ResponseEntity<CommonResponseBean> getUserNotificationCount(@PathVariable Long userId) {
+	@GetMapping("/getUserNotificationCount")
+	public ResponseEntity<CommonResponseBean> getUserNotificationCount(@RequestParam Long userId) {
 		CommonResponseBean response = userService.getUserNotificationCount(userId);
 		if(response.getStatus()) {
 			return ResponseEntity.status(HttpStatus.CREATED).body(response);

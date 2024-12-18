@@ -27,7 +27,6 @@ public class PostServiceIMPL implements PostService {
 	@Autowired
 	private PostRepo postRepo;
 
-
 	@Override
 	public CommonResponseBean savePost(UserPostBean bean) {
 		CommonResponseBean responseBean = new CommonResponseBean();
@@ -35,13 +34,12 @@ public class PostServiceIMPL implements PostService {
 		if (post != null) {
 			Optional<User> userOptional = userRepo.findById(bean.getUserId());
 			if (userOptional.isPresent()) {
-				User user = userOptional.get();
-				user.getPosts().add(post);
-				User result = userRepo.save(user);
+				post.setUser(userOptional.get());
+				UserPost result = postRepo.save(post);
 				if (result != null) {
 					responseBean.setStatus(true);
 					responseBean.setMessage("Post Added Successfully.");
-					responseBean.setResponseBean(result);
+					responseBean.setResponseBean(mapEntityToBean(post, null));
 				}
 			} else {
 				responseBean.setStatus(false);
@@ -89,7 +87,7 @@ public class PostServiceIMPL implements PostService {
 	}
 
 	@Override
-	public CommonResponseBean insertLike(UserPostBean bean, Long userId, Long postId) {
+	public CommonResponseBean insertLike(UserPostBean bean, Long postId) {
 		CommonResponseBean responseBean = new CommonResponseBean();
 		if (bean.getLike() != null) {
 			Optional<UserPost> userpost1 = postRepo.findById(postId);
@@ -105,7 +103,7 @@ public class PostServiceIMPL implements PostService {
 				String timestamp = currentDateTime.format(formatter);
 
 				notify.setDate(timestamp);
-
+				
 				userpost.getNotifications().add(notify);
 
 				UserPost result = postRepo.save(userpost);
@@ -128,8 +126,12 @@ public class PostServiceIMPL implements PostService {
 
 	@Override
 	public UserPostBean mapEntityToBean(UserPost user, CommonResponseBean responseBean) {
-		// TODO Auto-generated method stub
-		return null;
+		UserPostBean bean = new UserPostBean();
+		bean.setPostId(user.getPostId());
+		bean.setTime(user.getTime());
+		bean.setLike(user.getLikesCount());
+		bean.setContent(user.getContent());	;
+		return bean;
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.example.demo.entities;
 
+
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -13,7 +14,6 @@ public class Notification {
     private Long notificationID;
 
     private String date;
-
     
-
+    
    }

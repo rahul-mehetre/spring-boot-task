@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.beans.CommonResponseBean;
@@ -35,12 +36,11 @@ public class PostController {
 			}
 	}
 	
-	@PutMapping("/like/{userId}/{postId}")
+	@PutMapping("/like")
 	public ResponseEntity<CommonResponseBean> insertLike(@RequestBody UserPostBean userPostBean,
-			@PathVariable Long userId,@PathVariable Long postId
+			@RequestParam Long postId
 			){
-			userPostBean.setUserId(userId);
-			CommonResponseBean response  =  postService.insertLike(userPostBean,userId,postId);
+			CommonResponseBean response  =  postService.insertLike(userPostBean,postId);
 			if(response.getStatus()) {
 				return ResponseEntity.status(HttpStatus.CREATED).body(response);
 			}else {

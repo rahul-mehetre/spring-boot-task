@@ -6,6 +6,7 @@ import lombok.Data;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Data
 @Entity
@@ -19,14 +20,14 @@ public class User {
 
     private int age;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id") // foreign key column in the UserPost table
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "user")
+    @JsonManagedReference
+//    @JoinColumn(name = "user_id") // foreign key column in the UserPost table
     private List<UserPost> posts;
     
     
-    @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id") // foreign key column in the UserPost table
+    @JsonManagedReference
     private List<Notification> notifications ;
     
 }
